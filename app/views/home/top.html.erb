@@ -5,7 +5,7 @@
 
 <div id="memo-list">
 <% @posts.each do |post| %>
-	<div class="memo" id="memo<%= post.id %>" style="-webkit-transform:rotate(<%= Random.rand(-3 .. 3) %>deg);">
+	<div class="memo" id="memo<%= post.id %>" style="-webkit-transform:rotate(<%= Random.rand(-5 .. 5) %>deg);">
 		<span class='tape'></span>
 		<p><%= post.contents %></p>
 	</div>
@@ -29,7 +29,7 @@
   <% end %>
 
   <div id="input-area">
-	<%= f.text_area :contents %>
+	<%= f.text_area :contents,:size => "40x20" %>
 	<div class="actions">
 		<%= f.submit %>
 	</div>
