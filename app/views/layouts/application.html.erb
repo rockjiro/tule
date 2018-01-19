@@ -14,7 +14,7 @@
 		$(function(){
 			console.log("test");
 			$("#input-field").focus();
-			var count = 0;
+			var count = <%= @count %>;
 			$("#input-field").keypress(function(e){
 				if (event.shiftKey){
 					if(e.which == 13){

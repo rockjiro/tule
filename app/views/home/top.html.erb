@@ -2,7 +2,36 @@
 	<h1>Tule</h1>
 	<p class="sub-title"> ～information shared～ </p>
 </div>
-	<div id="input-area">
-		<textarea name="input_field" id="input-field" rows="11"></textarea>
+	<!--<div id="input-area">-->
+	<!--	<textarea name="input_field" id="input-field" rows="11"></textarea>-->
+	<!--</div>-->
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="input-area">
+	<%= f.text_area :contents %>
+	<div class="actions">
+		<%= f.submit %>
 	</div>
-	<div id="memo-list"></div>
+  </div>
+<% end %>
+	
+	
+	<% @posts.each do |post| %>
+		<div id="memo-list">
+			<div class="memo" id="memo<%= post.id %>" style="-webkit-transform:rotate(1deg);">
+				<span class='tape'></span>
+				<p><%= post.contents %></p>
+			</div>
+		</div>
+	<% end %>
