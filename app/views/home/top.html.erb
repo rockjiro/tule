@@ -2,10 +2,20 @@
 	<h1>Tule</h1>
 	<p class="sub-title"> ～information shared～ </p>
 </div>
-	<!--<div id="input-area">-->
-	<!--	<textarea name="input_field" id="input-field" rows="11"></textarea>-->
-	<!--</div>-->
-<%= form_for(@post) do |f| %>
+
+<div id="memo-list">
+<% @posts.each do |post| %>
+	<div class="memo" id="memo<%= post.id %>" style="-webkit-transform:rotate(<%= Random.rand(-3 .. 3) %>deg);">
+		<span class='tape'></span>
+		<p><%= post.contents %></p>
+	</div>
+<% end %>
+</div>
+
+<!--<div id="input-area">-->
+<!--	<textarea name="input_field" id="input-field" rows="11"></textarea>-->
+<!--</div>-->
+<%= form_for(@post, :url => {:controller => :home, :action => :create}) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -25,13 +35,3 @@
 	</div>
   </div>
 <% end %>
-	
-	
-	<% @posts.each do |post| %>
-		<div id="memo-list">
-			<div class="memo" id="memo<%= post.id %>" style="-webkit-transform:rotate(1deg);">
-				<span class='tape'></span>
-				<p><%= post.contents %></p>
-			</div>
-		</div>
-	<% end %>
