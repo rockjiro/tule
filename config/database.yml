@@ -21,7 +21,12 @@ test:
   database: db/test.sqlite3
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  encoding: utf8
+  database: d9kd9blav1avad
+  port: 5432
+  username: goemaqgbjrhczd
+  password: 8a8c7f8def280cbfe100a3ab338949ce7860ff841b1b16d71b56700ea393f90b
   # <<: *default
   #database: db/production.sqlite3
  
