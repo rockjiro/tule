@@ -8,6 +8,11 @@ class HomeController < ApplicationController
   end
 
   def create
+    contents = post_params
+    uri_reg = URI.regexp(%w[http https])
+    contents = contents.to_s
+    contents.gsub!(uri_reg) {%Q{<a href="#{$&}">#{$&}</a>}}
+
     @post = Post.new(post_params)
 
     respond_to do |format|
