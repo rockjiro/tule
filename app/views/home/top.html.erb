@@ -7,7 +7,7 @@
 <% @posts.each do |post| %>
 	<div class="memo" id="memo<%= post.id %>" style="-webkit-transform:rotate(<%= Random.rand(-5 .. 5) %>deg);">
 		<span class='tape'></span>
-		<p><%= post.contents %></p>
+		<p><%= simple_format(post.contents) %></p>
 	</div>
 <% end %>
 </div>
