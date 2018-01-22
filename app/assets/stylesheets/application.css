@@ -1,11 +1,10 @@
 body {
   background-color: rgb(205, 205, 205);
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
   /*background-image: url("/assets/melamine-wood.png");*/
-  font-family: 'Kite One', sans-serif;
+  font-family: 'Kite One', "Rounded Mplus 1c";
 }
 
 .head-area h1{
