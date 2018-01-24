@@ -3,18 +3,17 @@ body {
   color: #333;
   font-size: 13px;
   line-height: 18px;
-  /*background-image: url("/assets/melamine-wood.png");*/
   font-family: 'Kite One', "Rounded Mplus 1c";
 }
 
 .head-area h1{
-    font-size: 50px;
+    font-size: 2rem;
     text-align: center;
     color: #f7f7f7;
     font-weight: bolder;
     text-shadow: 2px 2px 0px #bbb7b7;
     width: 15%;
-    margin: 30px auto 0 auto;
+    margin: 15px auto 0 auto;
 }
 
 .head-area{
@@ -22,17 +21,14 @@ body {
     padding: 3px;
     border-radius: 55px;
     box-shadow: 0px 3px 0px 2px #939393;
-    width: 500px;
+    width: 25em;
     margin: 15px 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
 }
 
 .sub-title{
     text-align: center;
-    margin: 25px 0 15px 0;
-    font-size: 28px;
+    margin: 15px 0 15px 0;
+    font-size: 1.5rem;
     text-shadow: 2px 2px 0px #bbb7b7;
     color: #eaffdb;
 }
@@ -46,32 +42,42 @@ body {
 }
 
 #input-area {
+    display: none;
 	position: fixed;
-	bottom: 0;
-	right: 0;
-	padding: 15px;
-	margin: 5px;
+	bottom: 1vh;
+	right: 5vw;
+	padding: 15px 0;
 	text-align: center;
+	width: 90vw;
+	background-color: #9bd8a39e;
+	box-shadow: 0px 0px 5px 1px #4c4c4c;
+}
+
+@media screen and (min-width: 400px)  {
+    #input-area {
+        bottom: 5vh;
+	    right: 1vw;
+        width: 30vw;
+    }
 }
 
 #input-area textarea{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #memo-list {
 	display: flex;
 	flex-wrap: wrap;
-	width: 80%;
-	margin-top: 150px;
+	width: 100%;
 }
 
 .memo {
-	width: 350px;
-	height: 350px;
+	width: 18em;
+	height: 18em;
 	background-color: rgb(252, 252, 252);
 	margin: 50px 20px;
 	padding: 10px;
-	font-size: 20px;
+	font-size: 1rem;
 	box-shadow: 0px 3px 3px 2px rgba(80, 80, 80, 0.14901960784313725);
 	border-radius: 0 0 5px 0;
 	position: relative;
@@ -86,13 +92,11 @@ body {
     width:150px;
     height:28px;
     position:absolute;
-    top:-13px;
-    left:100px;
+    top:-1em;
+    left:5em;
 }
 
 .memo p {
-	/*margin:0;*/
-	font-weight: bold;
 	word-wrap: break-word;
 }
 
@@ -106,18 +110,51 @@ body {
 .select {
 	background-color: #878787;
 }
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+.destroy-btn {
+    display: none;
+    position: fixed;
+    right: 1vw;
+    top: 3vh;
+    background-color: #e03838;
+    padding: 5px 10px;
+    text-align: center;
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+.destroy-btn a {
+    color: #fff;
+    text-decoration:  none;
+}
+
+.actions {
+    text-align: right;
+    padding-right: 4vw;
+}
+
+.actions input{
+    width: 60px;
+    color: #fff;
+    font-size: 1.5em;
+    background-color: #4CAF50;
+    border: unset;
+    font-family: 'Kite One', "Rounded Mplus 1c";
+}
+
+.input-show {
+    cursor: pointer;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    vertical-align: middle;
+}
+
+.input-show p {
+    background-color: #50af50;
+    font-size: 2em;
+    color: #fff;
+    border-radius: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}

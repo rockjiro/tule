@@ -7,7 +7,14 @@
 <% @posts.each do |post| %>
 	<div class="memo" id="memo<%= post.id %>" style="-webkit-transform:rotate(<%= Random.rand(-5 .. 5) %>deg);">
 		<span class='tape'></span>
-		<p><%= simple_format(post.contents) %></p>
+		<span class="destroy-btn"><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+		<%
+        #投稿内容のURL形式の記述をaタグで囲む
+		contents = post.contents
+        uri_reg = URI.regexp(%w[http https])
+        contents.gsub!(uri_reg) {%Q{<a href="#{$&}">#{$&}</a>}}
+		%>
+		<p><%= simple_format(contents) %></p>
 	</div>
 <% end %>
 </div>
@@ -29,9 +36,10 @@
   <% end %>
 
   <div id="input-area">
-	<%= f.text_area :contents,:size => "30x10" %>
+	<%= f.text_area :contents,:size => "30x5" %>
 	<div class="actions">
-		<%= f.submit %>
+		<%= f.submit("add") %>
 	</div>
   </div>
+  <div class="input-show"><p>+</p></div>
 <% end %>

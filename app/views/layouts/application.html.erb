@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Tule</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -14,6 +15,8 @@
 		$(function(){
 			$("#input-field").focus();
 			var count = <%= @count %>;
+			
+			// 入力項目上でShift + Enterキー押下時の処理
 			$("#input-field").keypress(function(e){
 				if (event.shiftKey){
 					if(e.which == 13){
@@ -29,22 +32,21 @@
 			})
 
 			$(document).on("mouseup",".memo",function(e){
-				if(e.which == 1){
+				if(e.which == 3){
 					if($(this).hasClass("select")){
 						$(this).removeClass("select");
+						$(this).children(".destroy-btn").hide();
 					}else{
 						$(this).addClass("select");
+						$(this).children(".destroy-btn").show();
 					}
 					return false;
 				}
 			})
 
-			//右クリック押下時、選択中のメモを削除する
-			$(document).on("mouseup",".memo",function(e){
-				if(e.which == 3){
-					$(".select").remove();
-					return false;
-				}
+			$(".input-show").click(function(){
+				$(this).hide();
+				$("#input-area").show();
 			})
 
 			$(document).on("contextmenu",function(){
