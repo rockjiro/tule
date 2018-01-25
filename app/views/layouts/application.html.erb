@@ -20,12 +20,6 @@
 			$("#input-area").keypress(function(e){
 				if (event.shiftKey){
 					if(e.which == 13){
-						// count++;
-						// var inputStr = $(this).val();
-						// inputStr = inputStr.replace(/\r?\n/g, '<br>');
-						// var randnum = -5 + Math.floor( Math.random() * 10 );
-						// $("#memo-list").append("<div class='memo' id='memo"+ count +"' style='-webkit-transform:rotate(" + randnum + "deg);'><span class='tape'></span><p>"+ inputStr +"</p></div>");
-						// $(this).val("");
 						console.log("test");
 						$("#add-btn").click();
 						return false;
@@ -47,8 +41,15 @@
 			})
 
 			$(".input-show").click(function(){
-				$(this).hide();
-				$("#input-area").show();
+				if($(".input-show").hasClass("close")){
+					$(".input-show").addClass("open");
+					$(".input-show").removeClass("close");
+					$("#input-area").fadeIn();
+				}else{
+					$(".input-show").addClass("close");
+					$(".input-show").removeClass("open")
+					$("#input-area").fadeOut();
+				}
 			})
 
 			$(document).on("contextmenu",function(){
