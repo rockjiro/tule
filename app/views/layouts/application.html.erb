@@ -52,6 +52,52 @@
 				}
 			})
 
+
+			$("#category-select .all").click(function(){
+				$("#memo-list .memo").each(function(){
+					$(this).show();
+				})
+			})
+
+			$("#category-select .category0").click(function(){
+				$("#memo-list .memo").each(function(){
+					if($(this).hasClass("category0")){
+						$(this).show();
+					}else{
+						$(this).hide();	
+					}
+				})
+			})
+
+			$("#category-select .category1").click(function(){
+				$("#memo-list .memo").each(function(){
+					if($(this).hasClass("category1")){
+						$(this).show();
+					}else{
+						$(this).hide();	
+					}
+				})
+			})
+
+			$("#category-select .category2").click(function(){
+				$("#memo-list .memo").each(function(){
+					if($(this).hasClass("category2")){
+						$(this).show();
+					}else{
+						$(this).hide();	
+					}
+				})
+			})
+
+			$("#category-select .category3").click(function(){
+				$("#memo-list .memo").each(function(){
+					if($(this).hasClass("category3")){
+						$(this).show();
+					}else{
+						$(this).hide();	
+					}
+				})
+			})
 			$(document).on("contextmenu",function(){
 				return false;
 			})

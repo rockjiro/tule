@@ -33,6 +33,36 @@ body {
     color: #eaffdb;
 }
 
+#category-select {
+    position: absolute;
+    width: 15vw;
+    height: 16vh;
+    background-color: #505050;
+    top: 1vh;
+    right: 1vw;
+    padding: 1vw;
+    box-shadow: 0px 0px 10px 4px #979797;
+}
+
+#category-select div{
+    margin-bottom: 8px;
+    height: 2vh;
+    cursor: pointer;
+}
+
+#category-select p {
+    margin: 0 0 1vh 0;
+    color: #fff;
+}
+
+#category-select .tape{
+    position: absolute;
+    width: 10vw;
+    height: 2vh;
+    border-left:2px dotted rgba(0,0,0,0.1);
+    border-right:2px dotted rgba(0,0,0,0.1);
+}
+
 #input-field {
 	font-size: 20px;
 	background-color: rgb(255, 255, 255);
@@ -79,7 +109,7 @@ body {
     padding-bottom: 15px;
     text-align: center;
     width: 90vw;
-    background-color: #9bd8a39e;
+    background-color: #9bd8a3;
     box-shadow: 0px 0px 5px 1px #4c4c4c;
 }
 
@@ -103,7 +133,7 @@ body {
     font-size: 1.2em;
 }
 
-@media screen and (min-width: 420px)  {
+@media screen and (min-width: 750px)  {
     
     #input-area {
         bottom: 5vh;
@@ -120,6 +150,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
+	margin-top: 10vh;
 }
 
 .memo {
@@ -140,20 +171,28 @@ body {
     overflow: auto;
 }
 
-.memo.category1 .tape{
+.all .tape{
+	background-color: rgba(255, 221, 0, 0.61);
+}
+
+.category0 .tape{
+    background-color: rgba(255, 255, 255, 0.57);
+}
+
+.category1 .tape{
     background-color: rgba(250, 7, 7, 0.4);
 }
 
-.memo.category2 .tape{
+.category2 .tape{
     background-color: rgba(43, 250, 7, 0.4);
 }
 
-.memo.category3 .tape{
+.category3 .tape{
     background-color: rgba(7, 215, 250, 0.4);
 }
 
 .memo .tape{
-    background:rgba(255,255,255,0.4);
+    /*background:rgba(255,255,255,0.4);*/
     border-left:2px dotted rgba(0,0,0,0.1);
     border-right:2px dotted rgba(0,0,0,0.1);
     box-shadow:0 0 5px rgba(0,0,0,0.2);
