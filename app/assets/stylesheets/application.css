@@ -11,7 +11,7 @@ body {
     text-align: center;
     color: #f7f7f7;
     font-weight: bolder;
-    text-shadow: 2px 2px 0px #bbb7b7;
+    text-shadow: 2px 2px 0px #868686;
     width: 15%;
     margin: 15px auto 0 auto;
 }
@@ -29,38 +29,46 @@ body {
     text-align: center;
     margin: 15px 0 15px 0;
     font-size: 1.5rem;
-    text-shadow: 2px 2px 0px #bbb7b7;
+    text-shadow: 2px 2px 0px #9e9e9e;
     color: #eaffdb;
 }
 
 #category-select {
-    position: absolute;
-    width: 15vw;
-    height: 16vh;
+    display: none;
+    position: fixed;
+    width: 90vw;
     background-color: #505050;
-    top: 1vh;
-    right: 1vw;
+    bottom: 30vh;
+    right: 5vw;
     padding: 1vw;
     box-shadow: 0px 0px 10px 4px #979797;
+    z-index: 1;
 }
 
 #category-select div{
     margin-bottom: 8px;
-    height: 2vh;
+    height: 8vh;
     cursor: pointer;
+    font-size: 1.2em;
+    width: 90%;
+    margin: 1.2vh auto;
 }
 
 #category-select p {
-    margin: 0 0 1vh 0;
+    margin: 0 0 2vh 0;
     color: #fff;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 #category-select .tape{
     position: absolute;
-    width: 10vw;
-    height: 2vh;
+    width: 90%;
+    height: 6vh;
     border-left:2px dotted rgba(0,0,0,0.1);
     border-right:2px dotted rgba(0,0,0,0.1);
+    font-size: 1em;
+    text-align: center;
 }
 
 #input-field {
@@ -71,10 +79,30 @@ body {
 	z-index: 2;
 }
 
+.category-select-show {
+    cursor: pointer;
+    position: fixed;
+    right: 2vw;
+    bottom: 11vh;
+    vertical-align: middle;
+    transition: all 1s 0s ease;
+}
+
+.category-select-show p {
+    background-color: #50af50;
+    font-size: 2em;
+    color: #fff;
+    border-radius: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+    transition: all 300ms 0s ease;
+}
+
 .input-show {
     cursor: pointer;
     position: fixed;
-    right: 1vw;
+    right: 2vw;
     bottom: 1vh;
     vertical-align: middle;
     transition: all 1s 0s ease;
@@ -87,7 +115,7 @@ body {
     border-radius: 40px;
     text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
     transition: all 300ms 0s ease;
 }
 
@@ -133,19 +161,6 @@ body {
     font-size: 1.2em;
 }
 
-@media screen and (min-width: 750px)  {
-    
-    #input-area {
-        bottom: 5vh;
-	    left: 35vw;
-        width: 30vw;
-    }
-    
-    #input-area textarea{
-        font-size: 15px;
-    }
-}
-
 #memo-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -184,15 +199,14 @@ body {
 }
 
 .category2 .tape{
-    background-color: rgba(43, 250, 7, 0.4);
+    background-color: rgba(78, 250, 7, 0.32);
 }
 
 .category3 .tape{
-    background-color: rgba(7, 215, 250, 0.4);
+    background-color: rgba(7, 183, 250, 0.4);
 }
 
 .memo .tape{
-    /*background:rgba(255,255,255,0.4);*/
     border-left:2px dotted rgba(0,0,0,0.1);
     border-right:2px dotted rgba(0,0,0,0.1);
     box-shadow:0 0 5px rgba(0,0,0,0.2);
@@ -275,4 +289,44 @@ body {
     background-color: #4CAF50;
     border: unset;
     font-family: 'Kite One', "Rounded Mplus 1c";
+}
+
+@media screen and (min-width: 750px)  {
+    
+    #input-area {
+        bottom: 5vh;
+	    left: 35vw;
+        width: 30vw;
+    }
+    
+    #input-area textarea{
+        font-size: 15px;
+    }
+
+    #category-select {
+        position: fixed;
+        width: 20vw;
+        top: 1vh;
+        bottom: unset;
+        right: 1vw;
+        padding: 1vw;
+    }
+    
+    #category-select div{
+        margin-bottom: 8px;
+        height: 5vh;
+    }
+    
+    #category-select p {
+        margin: 0 0 1vh 0;
+    }
+    
+    #category-select .tape{
+        width: 18vw;
+        height: 4vh;
+    }
+    
+    .category-select-show {
+        bottom: 7vh;
+    }
 }

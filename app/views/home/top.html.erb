@@ -5,39 +5,36 @@
 
 <div id="category-select">
   <p>Priority Select</p>
-  <div class="all"><span class="tape">all</span></div>
-  <div class="category0"><span class="tape">other</span></div>
-  <div class="category1"><span class="tape">high</span></div>
-  <div class="category2"><span class="tape">middle</span></div>
-  <div class="category3"><span class="tape">low</span></div>
+  <div class="all"><p class="tape">all</p></div>
+  <div class="category0"><p class="tape">other</p></div>
+  <div class="category1"><p class="tape">high</p></div>
+  <div class="category2"><p class="tape">middle</p></div>
+  <div class="category3"><p class="tape">low</p></div>
 </div>
 
+<!--投稿一覧表示-->
 <div id="memo-list">
 <% @posts.each do |post| %>
-	<div class="memo category<%= post.category %>" id="memo<%= post.id %>" style="-webkit-transform:rotate(<%= Random.rand(-5 .. 5) %>deg);">
-	  <span class="destroy-btn"><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-	  <div class="inner">
-  		<span class='tape'></span>
-  		<%
-          #投稿内容のURL形式の記述をaタグで囲む
-  		contents = post.contents
-          uri_reg = URI.regexp(%w[http https])
-          contents.gsub!(uri_reg) {%Q{<a href="#{$&}">#{$&}</a>}}
-  		%>
-  		<p><%= simple_format(contents) %></p>
-		</div>
-	</div>
+  <div class="memo category<%= post.category %>" id="memo<%= post.id %>" style="-webkit-transform:rotate(<%= Random.rand(-5 .. 5) %>deg);">
+    <span class="destroy-btn"><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    <div class="inner">
+      <span class='tape'></span>
+      <%
+        #投稿内容のURL形式の記述をaタグで囲む
+        contents = post.contents
+        uri_reg = URI.regexp(%w[http https])
+        contents.gsub!(uri_reg) {%Q{<a href="#{$&}">#{$&}</a>}}
+      %>
+      <p><%= simple_format(contents) %></p>
+    </div>
+  </div>
 <% end %>
 </div>
 
-<!--<div id="input-area">-->
-<!--	<textarea name="input_field" id="input-field" rows="11"></textarea>-->
-<!--</div>-->
 <%= form_for(@post, :url => {:controller => :home, :action => :create}) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
       <% @post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -46,14 +43,16 @@
     </div>
   <% end %>
 
+  <!--入力項目-->
   <div id="input-area">
     <span class="cloumn-name">Priority</span>
     <%= f.select :category, [["other", 0], ["high", 1], ["middle", 2], ["low", 3]] %>
     <span class="cloumn-name">Contents</span>
-  	<%= f.text_area :contents,:size => "35x10" %>
-	<div class="actions">
-		<%= f.submit("add",:id=>"add-btn") %>
-	</div>
+    <%= f.text_area :contents,:size => "35x10" %>
+    <div class="actions">
+      <%= f.submit("add",:id=>"add-btn") %>
+    </div>
   </div>
+  <div class="category-select-show close"><p>+</p></div>
   <div class="input-show close"><p>+</p></div>
 <% end %>
