@@ -17,15 +17,17 @@
 			var count = <%= @count %>;
 			
 			// 入力項目上でShift + Enterキー押下時の処理
-			$("#input-field").keypress(function(e){
+			$("#input-area").keypress(function(e){
 				if (event.shiftKey){
 					if(e.which == 13){
-						count++;
-						var inputStr = $(this).val();
-						inputStr = inputStr.replace(/\r?\n/g, '<br>');
-						var randnum = -5 + Math.floor( Math.random() * 10 );
-						$("#memo-list").append("<div class='memo' id='memo"+ count +"' style='-webkit-transform:rotate(" + randnum + "deg);'><span class='tape'></span><p>"+ inputStr +"</p></div>");
-						$(this).val("");
+						// count++;
+						// var inputStr = $(this).val();
+						// inputStr = inputStr.replace(/\r?\n/g, '<br>');
+						// var randnum = -5 + Math.floor( Math.random() * 10 );
+						// $("#memo-list").append("<div class='memo' id='memo"+ count +"' style='-webkit-transform:rotate(" + randnum + "deg);'><span class='tape'></span><p>"+ inputStr +"</p></div>");
+						// $(this).val("");
+						console.log("test");
+						$("#add-btn").click();
 						return false;
 					}
 				}

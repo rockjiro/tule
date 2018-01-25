@@ -6,15 +6,17 @@
 <div id="memo-list">
 <% @posts.each do |post| %>
 	<div class="memo category<%= post.category %>" id="memo<%= post.id %>" style="-webkit-transform:rotate(<%= Random.rand(-5 .. 5) %>deg);">
-		<span class='tape'></span>
-		<span class="destroy-btn"><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-		<%
-        #投稿内容のURL形式の記述をaタグで囲む
-		contents = post.contents
-        uri_reg = URI.regexp(%w[http https])
-        contents.gsub!(uri_reg) {%Q{<a href="#{$&}">#{$&}</a>}}
-		%>
-		<p><%= simple_format(contents) %></p>
+	  <span class="destroy-btn"><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+	  <div class="inner">
+  		<span class='tape'></span>
+  		<%
+          #投稿内容のURL形式の記述をaタグで囲む
+  		contents = post.contents
+          uri_reg = URI.regexp(%w[http https])
+          contents.gsub!(uri_reg) {%Q{<a href="#{$&}">#{$&}</a>}}
+  		%>
+  		<p><%= simple_format(contents) %></p>
+		</div>
 	</div>
 <% end %>
 </div>
@@ -36,10 +38,10 @@
   <% end %>
 
   <div id="input-area">
+  <%= f.select :category, [["その他", 0], ["緊急連絡", 1], ["連絡事項", 2], ["情報共有", 3]] %>
 	<%= f.text_area :contents,:size => "40x10" %>
-	<%= f.select :category, [["緊急連絡", 1], ["連絡事項", 2], ["情報共有", 3]] %>
 	<div class="actions">
-		<%= f.submit("add") %>
+		<%= f.submit("add",:id=>"add-btn") %>
 	</div>
   </div>
   <div class="input-show"><p>+</p></div>
