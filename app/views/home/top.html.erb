@@ -5,7 +5,7 @@
 
 <div id="memo-list">
 <% @posts.each do |post| %>
-	<div class="memo" id="memo<%= post.id %>" style="-webkit-transform:rotate(<%= Random.rand(-5 .. 5) %>deg);">
+	<div class="memo category<%= post.category %>" id="memo<%= post.id %>" style="-webkit-transform:rotate(<%= Random.rand(-5 .. 5) %>deg);">
 		<span class='tape'></span>
 		<span class="destroy-btn"><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 		<%
@@ -36,7 +36,8 @@
   <% end %>
 
   <div id="input-area">
-	<%= f.text_area :contents,:size => "30x5" %>
+	<%= f.text_area :contents,:size => "40x10" %>
+	<%= f.select :category, [["緊急連絡", 1], ["連絡事項", 2], ["情報共有", 3]] %>
 	<div class="actions">
 		<%= f.submit("add") %>
 	</div>

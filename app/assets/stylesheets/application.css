@@ -21,7 +21,7 @@ body {
     padding: 3px;
     border-radius: 55px;
     box-shadow: 0px 3px 0px 2px #939393;
-    width: 25em;
+    width: 26em;
     margin: 15px 0;
 }
 
@@ -41,11 +41,29 @@ body {
 	z-index: 2;
 }
 
+.input-show {
+    cursor: pointer;
+    position: fixed;
+    right: 1vw;
+    bottom: 1vh;
+    vertical-align: middle;
+}
+
+.input-show p {
+    background-color: #50af50;
+    font-size: 2em;
+    color: #fff;
+    border-radius: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
 #input-area {
     display: none;
 	position: fixed;
 	bottom: 1vh;
-	right: 5vw;
+	left: 5vw;
 	padding: 15px 0;
 	text-align: center;
 	width: 90vw;
@@ -53,16 +71,21 @@ body {
 	box-shadow: 0px 0px 5px 1px #4c4c4c;
 }
 
-@media screen and (min-width: 400px)  {
-    #input-area {
-        bottom: 5vh;
-	    right: 1vw;
-        width: 30vw;
-    }
+#input-area textarea{
+    font-size: 14px;
 }
 
-#input-area textarea{
-    font-size: 15px;
+@media screen and (min-width: 420px)  {
+    
+    #input-area {
+        bottom: 5vh;
+	    left: 35vw;
+        width: 30vw;
+    }
+    
+    #input-area textarea{
+        font-size: 15px;
+    }
 }
 
 #memo-list {
@@ -82,6 +105,18 @@ body {
 	border-radius: 0 0 5px 0;
 	position: relative;
 	line-height: 1.5;
+}
+
+.memo.category1 .tape{
+    background-color: rgba(250, 7, 7, 0.4);
+}
+
+.memo.category2 .tape{
+    background-color: rgba(43, 250, 7, 0.4);
+}
+
+.memo.category3 .tape{
+    background-color: rgba(7, 215, 250, 0.4);
 }
 
 .memo .tape{
@@ -133,28 +168,11 @@ body {
 }
 
 .actions input{
+    cursor: pointer;
     width: 60px;
     color: #fff;
     font-size: 1.5em;
     background-color: #4CAF50;
     border: unset;
     font-family: 'Kite One', "Rounded Mplus 1c";
-}
-
-.input-show {
-    cursor: pointer;
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    vertical-align: middle;
-}
-
-.input-show p {
-    background-color: #50af50;
-    font-size: 2em;
-    color: #fff;
-    border-radius: 40px;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
 }
