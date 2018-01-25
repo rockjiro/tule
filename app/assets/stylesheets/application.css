@@ -287,6 +287,14 @@ body {
 
 @media screen and (min-width: 750px)  {
     
+    .input-show {
+        width: 3vw;
+    }
+    
+    .category-select-show {
+        width: 3vw;
+    }
+    
     #input-area {
         bottom: 5vh;
 	    left: 35vw;
