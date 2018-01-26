@@ -28,41 +28,25 @@ $(function(){
 			}
 		}
 	})
-	
-	//右クリックした場合、削除ボタンを表示する
-	$(document).on("mouseup",".memo",function(e){
-		if(e.which == 3){
-			if($(this).hasClass("select")){
-				$(this).removeClass("select");
-				$(this).children(".destroy-btn").hide();
-			}else{
-				$(this).addClass("select");
-				$(this).children(".destroy-btn").show();
-			}
-			return false;
-		}
-	})
 
-	//スマホで投稿を長押しした場合、削除ボタンを表示する
-	var isLongTap = false;
-	$(document).on("touchstart",".memo",function(){
-	  timerid = setTimeout(function() {
-	    isLongTap = true;
-	  },1200);
-	});
-	$(document).on('touchend touchcancel',".memo",function(){
-	  clearTimeout(timerid);
-	  if(isLongTap){
-		if($(this).hasClass("select")){
-			$(this).removeClass("select");
-			$(this).children(".destroy-btn").hide();
+	//ゴミ箱を表示する
+	$(".garbage-show").click(function(){
+		if($(".garbage-show").hasClass("close")){
+			$(".garbage-show").addClass("open");
+			$(".garbage-show").removeClass("close");
+			
+			$(".memo").addClass("select");
+			$(".memo").children(".destroy-btn").show();
 		}else{
-			$(this).addClass("select");
-			$(this).children(".destroy-btn").show();
-		}	
-	  }
-	  isLongTap = false;
-	});
+			$(".garbage-show").addClass("close");
+			$(".garbage-show").removeClass("open")
+			
+			$(".memo").removeClass("select");
+			$(".memo").children(".destroy-btn").hide();
+		}
+		$(".input-show").toggle();
+		$(".category-select-show").toggle();
+	})
 
 	//カテゴリー選択を表示する
 	$(".category-select-show").click(function(){
@@ -75,6 +59,7 @@ $(function(){
 			$(".category-select-show").removeClass("open")
 			$("#category-select").fadeOut();
 		}
+		$(".garbage-show").toggle();
 		$(".input-show").toggle();
 	})
 
@@ -89,6 +74,7 @@ $(function(){
 			$(".input-show").removeClass("open")
 			$("#input-area").fadeOut();
 		}
+		$(".garbage-show").toggle();
 		$(".category-select-show").toggle();
 	})
 
