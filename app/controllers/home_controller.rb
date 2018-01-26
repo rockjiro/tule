@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  # force_ssl only: :new
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def top
     @posts = Post.all
