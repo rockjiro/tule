@@ -63,7 +63,7 @@ input[type="submit"] {
 #category-select p {
     margin: 0 0 2vh 0;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1.5em;
     text-align: center;
 }
 
@@ -73,7 +73,7 @@ input[type="submit"] {
     height: 6vh;
     border-left:2px dotted rgba(0,0,0,0.1);
     border-right:2px dotted rgba(0,0,0,0.1);
-    font-size: 1em;
+    font-size: 1.3em;
     text-align: center;
 }
 
@@ -158,7 +158,7 @@ input[type="submit"] {
     margin: 0.5vh auto;
     padding: 2px;
     font-family: 'Kite One', "Rounded Mplus 1c";
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 #memo-list {
