@@ -6,6 +6,12 @@ body {
   font-family: 'Kite One', "Rounded Mplus 1c";
 }
 
+input[type="submit"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+
 .head-area h1{
     font-size: 2rem;
     text-align: center;
@@ -228,7 +234,7 @@ body {
 
 .destroy-btn {
     display: none;
-    position: fixed;
+    position: absolute;
     right: 1vw;
     top: 3vh;
     background-color: #e03838;
