@@ -25,8 +25,9 @@
         uri_reg = URI.regexp(%w[http https])
         contents.gsub!(uri_reg) {%Q{<a href="#{$&}">#{$&}</a>}}
       %>
-      <p><%= simple_format(contents) %></p>
+      <p class="contents"><%= simple_format(contents) %></p>
     </div>
+    <p class="create-date">created : <%= post.created_at.strftime('%-m/%-d(%a)') %></p>
   </div>
 <% end %>
 </div>
