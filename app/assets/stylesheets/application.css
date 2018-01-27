@@ -13,13 +13,10 @@ input[type="submit"] {
 
 
 .head-area h1{
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     color: #f7f7f7;
-    font-weight: bolder;
     text-shadow: 2px 2px 0px #868686;
-    width: 15%;
-    margin: 15px auto 0 auto;
 }
 
 .head-area{
@@ -33,10 +30,9 @@ input[type="submit"] {
 
 .sub-title{
     text-align: center;
-    margin: 15px 0 15px 0;
     font-size: 1.5rem;
     text-shadow: 2px 2px 0px #9e9e9e;
-    color: #eaffdb;
+    color: #ffffff;
 }
 
 #category-select {
