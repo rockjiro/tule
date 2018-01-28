@@ -15,20 +15,8 @@
 //= require turbolinks
 //= require_tree .
 $(function(){
-	$("#input-field").focus();
-// 			var count = <%= @count %>;
+	$('.memo .inner a').attr('target' , '_blank');
 	
-	// 入力項目上でShift + Enterキー押下時の処理
-	$("#input-area").keypress(function(e){
-		if (event.shiftKey){
-			if(e.which == 13){
-				console.log("test");
-				$("#add-btn").click();
-				return false;
-			}
-		}
-	})
-
 	//ゴミ箱を表示する
 	$(".garbage-show").click(function(){
 		if($(".garbage-show").hasClass("close")){

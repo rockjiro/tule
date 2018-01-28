@@ -176,23 +176,23 @@ input[type="submit"] {
     overflow: auto;
 }
 
-.all .tape{
-	background-color: rgba(255, 221, 0, 0.61);
-}
-
-.category0 .tape{
-    background-color: rgba(255, 255, 255, 0.57);
-}
-
 .category1 .tape{
     background-color: rgba(250, 7, 7, 0.4);
 }
 
 .category2 .tape{
-    background-color: rgba(78, 250, 7, 0.32);
+    background-color: rgba(7, 183, 250, 0.4);
 }
 
-.category3 .tape{
+#category-select .all .tape{
+    background-color: rgba(234, 234, 234, 0.61);
+}
+
+#category-select .category1 .tape{
+    background-color: rgba(250, 7, 7, 0.4);
+}
+
+#category-select .category2 .tape{
     background-color: rgba(7, 183, 250, 0.4);
 }
 
@@ -230,7 +230,8 @@ input[type="submit"] {
     background-color: #e03838;
     padding: 5px 10px;
     text-align: center;
-    animation: pulse 0.2s infinite;
+    animation: pulse 0.5s infinite;
+    border-radius: 10px;
 }
 
 .destroy-btn:hover {
@@ -242,19 +243,19 @@ input[type="submit"] {
       transform:rotate(0deg);
   }
   10%{
-      transform:rotate(3deg);
+      transform:rotate(5deg);
   }
   25%{
-      transform:rotate(5deg);
+      transform:rotate(10deg);
   }
   50%{
       transform:rotate(0deg);
   }
   75%{
-      transform:rotate(5deg);
+      transform:rotate(10deg);
   }
   90%{
-      transform:rotate(3deg);
+      transform:rotate(5deg);
   }
   100%{
       transform:rotate(0deg);
@@ -320,7 +321,7 @@ input[type="submit"] {
     }
     
     #category-select p {
-        margin: 0 0 1vh 0;
+        margin: 0 0 3vh 0;
     }
     
     #category-select .tape{

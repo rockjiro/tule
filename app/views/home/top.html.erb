@@ -6,10 +6,8 @@
 <div id="category-select">
   <p>Priority Select</p>
   <div class="all"><p class="tape">all</p></div>
-  <div class="category0"><p class="tape">other</p></div>
   <div class="category1"><p class="tape">high</p></div>
-  <div class="category2"><p class="tape">middle</p></div>
-  <div class="category3"><p class="tape">low</p></div>
+  <div class="category2"><p class="tape">low</p></div>
 </div>
 
 <!--投稿一覧表示-->
@@ -47,7 +45,7 @@
   <!--入力項目-->
   <div id="input-area">
     <span class="cloumn-name">Priority Rank</span>
-    <%= f.select :category, [["other", 0], ["high", 1], ["middle", 2], ["low", 3]] %>
+    <%= f.select :category, [["high", 1], ["low", 2]] %>
     <span class="cloumn-name">Contents</span>
     <%= f.text_area :contents,:size => "35x3" %>
     <div class="actions">
