@@ -47,12 +47,12 @@
     <span class="cloumn-name">Priority Rank</span>
     <%= f.select :category, [["low", 2],["high", 1]] %>
     <span class="cloumn-name">Contents</span>
-    <%= f.text_area :contents,:size => "35x3" %>
+    <%= f.text_area :contents %>
     <div class="actions">
       <%= f.submit("add",:id=>"add-btn") %>
     </div>
   </div>
   <div class="function-btn garbage-show close"><%= image_tag 'garbage_box.png' %></div>
   <div class="function-btn category-select-show close"><%= image_tag 'search.png' %></div>
-  <div class="function-btn input-show close"><%= image_tag 'plus.png' %></div>
+  <div class="function-btn input-show close"><%= image_tag 'pen.png' %></div>
 <% end %>

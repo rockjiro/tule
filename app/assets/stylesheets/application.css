@@ -134,6 +134,8 @@ input[type="submit"] {
 
 #input-area textarea{
     font-size: 14px;
+    width: 85vw;
+    height: 10vh;
 }
 
 #input-area .cloumn-name {
@@ -299,12 +301,14 @@ input[type="submit"] {
     
     #input-area {
         bottom: 5vh;
-	    left: 35vw;
-        width: 30vw;
+        left: 35vw;
+        width: 40vw;
     }
     
     #input-area textarea{
         font-size: 15px;
+        width: 35vw;
+        height: 30vh;
     }
 
     #category-select {
