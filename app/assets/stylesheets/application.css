@@ -23,7 +23,7 @@ input[type="submit"] {
     background-color: #6ac777;
     padding: 3px;
     border-radius: 55px;
-    box-shadow: 0px 3px 0px 2px #939393;
+    box-shadow: 0px 3px 6px 0px #737373;
     width: 26em;
     margin: 15px 0;
 }
@@ -88,6 +88,7 @@ input[type="submit"] {
     width: 8vw;
     padding: 12px 15px;
     border-radius: 60px;
+    box-shadow: 0px 3px 6px 0px #737373;
 }
 
 .function-btn img {
