@@ -133,7 +133,7 @@ input[type="submit"] {
 }
 
 #input-area textarea{
-    font-size: 14px;
+    font-size: 1rem;
     width: 310px;
     height: 60px;
 }
