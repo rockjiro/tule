@@ -4,10 +4,10 @@
 </div>
 
 <div id="category-select">
-  <p>Priority Select</p>
-  <div class="all"><p class="tape">all</p></div>
-  <div class="category1"><p class="tape">high</p></div>
-  <div class="category2"><p class="tape">low</p></div>
+  <p>優先順位選択</p>
+  <div class="all"><p class="tape">全て</p></div>
+  <div class="category1"><p class="tape">高め</p></div>
+  <div class="category2"><p class="tape">低め</p></div>
 </div>
 
 <!--投稿一覧表示-->
@@ -44,12 +44,12 @@
 
   <!--入力項目-->
   <div id="input-area">
-    <span class="cloumn-name">Priority Rank</span>
-    <%= f.select :category, [["low", 2],["high", 1]] %>
-    <span class="cloumn-name">Contents</span>
+    <span class="cloumn-name">優先度</span>
+    <%= f.select :category, [["低め", 2],["高め", 1]] %>
+    <span class="cloumn-name">内容</span>
     <%= f.text_area :contents %>
     <div class="actions">
-      <%= f.submit("add",:id=>"add-btn") %>
+      <%= f.submit("追加",:id=>"add-btn") %>
     </div>
   </div>
   <div class="function-btn garbage-show close"><%= image_tag 'garbage_box.png' %></div>
